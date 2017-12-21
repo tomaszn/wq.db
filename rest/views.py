@@ -4,9 +4,10 @@ from rest_framework.decorators import detail_route
 from rest_framework import status, viewsets
 from .model_tools import get_ct, get_object_id, get_by_identifier
 from django.db.models import FieldDoesNotExist, ProtectedError
+from django.conf import settings
 
 
-class GenericAPIView(RestGenericAPIView):
+class GenericAPIView(getattr(settings, 'DRF_VIEW_BASE', RestGenericAPIView)):
     router = None
     ignore_kwargs = []
 
