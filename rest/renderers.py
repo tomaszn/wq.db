@@ -6,7 +6,7 @@ from wq.db.default_settings import SRID as DEFAULT_SRID
 class JSONRenderer(JSONRenderer):
     def render(self, data, accepted_media_type=None, renderer_context=None):
         if renderer_context and 'request' in renderer_context:
-            if not renderer_context['request'].is_ajax():
+            if renderer_context['request'].META.get('HTTP_X_REQUESTED_WITH') != 'XMLHttpRequest':  # is_ajax
                 renderer_context['indent'] = 4
         return super(JSONRenderer, self).render(
             data, accepted_media_type, renderer_context
