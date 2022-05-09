@@ -1,7 +1,7 @@
 try:
     from django.urls import path
 except ImportError:
-    from django.conf.urls import url
+    from django.urls import re_path
     path = None
 
 from wq.db import rest
@@ -23,9 +23,9 @@ if path:
 else:
     # FIXME: Remove in 2.0
     urlpatterns = [
-        url(
+        re_path(
             r'^' + base_url + 'filterable/(?P<ids>.+)',
             FilterableView.as_view()
         ),
-        url(r'^' + base_url, rest.router.urls),
+        re_path(r'^' + base_url, rest.router.urls),
     ]

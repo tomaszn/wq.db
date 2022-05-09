@@ -1,5 +1,5 @@
 from django.utils.encoding import force_str
-from django.conf.urls import url
+from django.urls import re_path
 from django.db.utils import DatabaseError
 
 from django.conf import settings
@@ -495,7 +495,7 @@ class ModelRouter(DefaultRouter):
             if not mapping:
                 continue
             view = viewset.as_view(mapping, **route.initkwargs)
-            urls.append(url(pattern, view, name=name))
+            urls.append(re_path(pattern, view, name=name))
 
         return format_suffix_patterns(urls)
 
