@@ -1,4 +1,4 @@
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.conf.urls import url
 from django.db.utils import DatabaseError
 
@@ -72,7 +72,7 @@ class ModelRouter(DefaultRouter):
         if 'name' not in kwargs:
             kwargs['name'] = model._meta.model_name
         if 'url' not in kwargs:
-            url = force_text(model._meta.verbose_name_plural)
+            url = force_str(model._meta.verbose_name_plural)
             kwargs['url'] = url.replace(' ', '')
 
         other_model = self._page_models.get(kwargs['name'], None)
