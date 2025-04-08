@@ -95,7 +95,7 @@ setup(
     ],
     test_suite='tests',
     setup_requires=[
-        'setuptools_scm',
+        'setuptools_scm<8',
     ],
     project_urls={
         'Homepage': 'https://wq.io/wq.db/',
