@@ -64,7 +64,7 @@ setup(
     long_description=readme(),
     long_description_content_type="text/markdown",
     install_requires=[
-        'Django>=1.11,<5.0',
+        'Django>=1.11,<5.1',
         'djangorestframework>=3.8.0,<3.15.0',
         'html-json-forms',
         'natural-keys>=1.6.0',
@@ -88,6 +88,7 @@ setup(
         'Framework :: Django :: 3.2',
         'Framework :: Django :: 4.0',
         'Framework :: Django :: 4.1',
+        'Framework :: Django :: 5.0',
         'Topic :: Software Development :: Libraries :: Application Frameworks',
         'Topic :: Text Processing :: Markup :: HTML',
         'Topic :: Scientific/Engineering :: GIS',
