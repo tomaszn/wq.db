@@ -15,6 +15,10 @@ jobs:
         django-version: [3.2.15, 4.0.7, 4.1]
         drf-version: [3.13.1]
         include:
+        - python-version: "3.12"
+          django-version: 5.1.13
+          drf-version: 3.14.0
+          variant: default
         - python-version: "3.11"
           django-version: 4.2.20
           drf-version: 3.14.0
